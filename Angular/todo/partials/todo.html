@@ -1,0 +1,31 @@
+<div class="wrapper page" ng-controller="listManagerController">
+	<h1>Todo App: What needs to be done ?</h1>
+	
+	<div id="content">
+		<div class="clearfix">
+			<form ng-submit="addToList()">
+				<ul class="controls" style="float:left;">
+					<li><span>Task :</span><input type="text" ng-model="task"/></li>
+					<li><input id="add" type="submit" value="Add to List"></li>
+					<li><input id="open" type="button" value="open image app" ng-click="openImageApp()"></li>
+				</ul>
+			</form>
+			<form ng-submit="importList()">
+				<ul class="controls" style="float:left; margin-left: 40px;">
+					<li><span>File Name :</span><input type="text" ng-model="fileName"/></li>
+					<li><input id="import" type="submit" value="Import existing List"></li>
+				</ul>
+			</form>
+			<form ng-submit="exportList()">
+				<ul class="controls" style="float:left; margin-left: 40px;">
+					<li><span>File Name :</span><input type="text" ng-model="newFileName"/></li>
+					<li><input id="export" type="submit" value="Export this List"></li>
+				</ul>
+			</form>
+		</div>
+		
+			
+		<ul class="listItem"><li ng-repeat="task in list.todo">{{task}}</li></ul>
+	</div>
+	
+</div>

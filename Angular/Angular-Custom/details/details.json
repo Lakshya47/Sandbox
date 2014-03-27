@@ -1,0 +1,24 @@
+{
+    "images" : [
+    			{
+    			"name":"snow",
+    			"url":"images/1.jpg"
+    			},
+			    {
+    			"name":"horizon",
+    			"url":"images/2.jpg"
+    			},
+			    {
+    			"name":"tree",
+    			"url":"images/3.jpg"
+    			},
+			    {
+    			"name":"wheel",
+    			"url":"images/4.jpg"
+    			},
+			    {
+    			"name":"peak",
+    			"url":"images/5.jpg"
+    			}
+			    ]
+}

@@ -1,0 +1,118 @@
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+body{
+	overflow-x:hidden;
+}
+/* todo page */
+
+.wrapper{
+	border: 1px solid #000000;
+	margin: 0 auto;
+	width: 89%;
+	padding:30px;
+}
+.wrapper h1{
+	font: 30px/100% helvetica;
+	text-align: center;
+}
+#content{
+	margin-top:40px;
+	padding-left:20px
+}
+.controls li{
+	margin: 10px 0;
+}
+.controls li span{
+	margin-right: 10px;
+}
+/* image app page */
+
+.imageapp {
+	border: 1px solid #000000;
+	margin: 10px;
+}
+.imageapp > *{
+	margin: 6px 10px;
+}
+.listItem {
+	font: 17px/100% helvetica;
+	margin: 20px 0 0 20px;
+	list-style: circle;
+}
+.listItem li{
+	margin: 5px 0;
+}
+.list{
+	list-style-type: none;
+}
+.imagename-enter {
+	-webkit-transition: 1s linear all; /* Chrome */
+	transition: 1s linear all;
+	opacity: 0;
+}
+ 
+.imagename-enter.imagename-enter-active {
+	opacity: 1;
+}
+
+/* Animations */
+
+.page-container.ng-enter,
+.page-container.ng-leave{
+	position: absolute;
+	width: 100%;
+}
+.page-container.ng-enter{
+	-webkit-animation: 1s page-enter;
+	animation: 1s page-enter;
+}
+.page-container.ng-leave{
+	-webkit-animation: 1s page-leave;
+	animation: 1s page-leave;
+}
+@keyframes page-enter {
+  from {
+    left:-10000px;
+  }
+  to {
+    left:0;
+  }
+}
+
+@-webkit-keyframes page-enter {
+  from {
+    left:-10000px;
+  }
+  to {
+    left:0;
+  }
+}
+@keyframes page-leave {
+  from {
+    left:0px;
+  }
+  to {
+    left:10000px;
+  }
+}
+
+@-webkit-keyframes page-leave {
+  from {
+    left:-10000px;
+  }
+  to {
+    left:0;
+  }
+}
+
+
+
+
+
+
+

@@ -4,6 +4,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	
+	<script src="js/lib/jquery-1.10.2.js"></script>
 	<script src="js/lib/angular/angular.js"></script>
 	<script src="js/lib/angular/angular-resource.js"></script>
 	<script src="js/lib/angular/angular-route.min.js"></script>
@@ -14,7 +15,7 @@
 	
 	
 </head>
-<body ng-app="todoApp">
-	<div class="page-container" ng-view=""></div>
+<body ng-app="todoApp" ng-controller="handlePageTransition">
+	<div ng-view="" ng-class="pageTransition"></div>
 </body>
 </html>

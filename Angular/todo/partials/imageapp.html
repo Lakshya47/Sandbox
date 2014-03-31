@@ -1,11 +1,13 @@
-<div ng-controller="mainController" class="imageapp page">
-	<input type="button" value="getJSON" ng-click="getJSON()"><br>
-	<ul class="list">
-		<li ng-repeat="image in jsonData.images" class="imagename">{{image.name}}</li>
-	</ul>
-	
-	
-	<select ng-model="selectedImage" ng-options="image.name for image in jsonData.images"></select><br>
-	<h1>{{selectedImage.name}}</h1>
-	<img alt="Big Image" ng-src="{{selectedImage.url}}" height="640px"/>
+<div ng-controller="mainController">
+	<div class="imageapp-wrapper">
+		<input type="button" value="getJSON" ng-click="getJSON()"><br>
+		<ul class="list">
+			<li ng-repeat="image in jsonData.images" class="imagename">{{image.name}}</li>
+		</ul>
+		<select ng-model="selectedImage" ng-options="image.name for image in jsonData.images"></select><br>
+		<h1>{{selectedImage.name}}</h1>
+		<img alt="Big Image" ng-src="{{selectedImage.url}}" height="640px"/>
+		
+		<div><input type="button" value="right" ng-click="rightPage()"></div>
+	</div>
 </div>

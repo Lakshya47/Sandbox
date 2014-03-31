@@ -10,13 +10,13 @@ body{
 }
 /* todo page */
 
-.wrapper{
+.todo-wrapper{
 	border: 1px solid #000000;
 	margin: 0 auto;
 	width: 89%;
 	padding:30px;
 }
-.wrapper h1{
+.todo-wrapper h1{
 	font: 30px/100% helvetica;
 	text-align: center;
 }
@@ -32,11 +32,11 @@ body{
 }
 /* image app page */
 
-.imageapp {
+.imageapp-wrapper{
 	border: 1px solid #000000;
 	margin: 10px;
 }
-.imageapp > *{
+.imageapp-wrapper > *{
 	margin: 6px 10px;
 }
 .listItem {
@@ -62,20 +62,30 @@ body{
 
 /* Animations */
 
-.page-container.ng-enter,
-.page-container.ng-leave{
+.slide-right.ng-enter,
+.slide-left.ng-enter,
+.slide-right.ng-leave,
+.slide-left.ng-leave{
 	position: absolute;
-	width: 100%;
+	width:100%;
 }
-.page-container.ng-enter{
-	-webkit-animation: 1s page-enter;
-	animation: 1s page-enter;
+.slide-right.ng-enter{
+	-webkit-animation: 1s slideRightEnter;
+	animation: 1s slideRightEnter;
 }
-.page-container.ng-leave{
-	-webkit-animation: 1s page-leave;
-	animation: 1s page-leave;
+.slide-left.ng-enter{
+	-webkit-animation: 1s slideLeftEnter;
+	animation: 1s slideLeftEnter;
 }
-@keyframes page-enter {
+.slide-right.ng-leave{
+	-webkit-animation: 1s slideRightLeave;
+	animation: 1s slideRightLeave;
+}
+.slide-left.ng-leave{
+	-webkit-animation: 1s slideLeftLeave;
+	animation: 1s slideLeftLeave;
+}
+@keyframes slideRightEnter {
   from {
     left:-10000px;
   }
@@ -83,8 +93,7 @@ body{
     left:0;
   }
 }
-
-@-webkit-keyframes page-enter {
+@-webkit-keyframes slideRightEnter {
   from {
     left:-10000px;
   }
@@ -92,7 +101,23 @@ body{
     left:0;
   }
 }
-@keyframes page-leave {
+@keyframes slideLeftEnter {
+  from {
+    left:10000px;
+  }
+  to {
+    left:0;
+  }
+}
+@-webkit-keyframes slideLeftEnter {
+  from {
+    left:10000px;
+  }
+  to {
+    left:0;
+  }
+}
+@keyframes slideRightLeave {
   from {
     left:0px;
   }
@@ -100,16 +125,30 @@ body{
     left:10000px;
   }
 }
-
-@-webkit-keyframes page-leave {
+@-webkit-keyframes slideRightLeave {
   from {
-    left:-10000px;
-  }
-  to {
     left:0;
   }
+  to {
+    left:10000px;
+  }
 }
-
+@keyframes slideLeftLeave {
+  from {
+    left:0;
+  }
+  to {
+    left:-10000px;
+  }
+}
+@-webkit-keyframes slideLeftLeave {
+  from {
+    left:0;
+  }
+  to {
+    left:-10000px;
+  }
+}
 
 
 

@@ -1,5 +1,5 @@
 app.controller('handlePageTransition',['$scope','$timeout','$location',function($scope,$timeout,$location){
-	$scope.currentRoute = window.location.href;
+	/*$scope.currentRoute = window.location.href;
 	$scope.displayURL = function(){
 		var temp = $scope.currentRoute.split('/');
 		temp = temp[temp.length-1]
@@ -10,7 +10,7 @@ app.controller('handlePageTransition',['$scope','$timeout','$location',function(
 			window.location.href="/GitRepo/Angular/todo/#/imageapp";
 		}
 		
-	};
+	};*/
 	$scope.leftPage = function(){
 		$scope.pageTransition = 'slide-right';
 		$location.path('/imageapp');
@@ -24,9 +24,23 @@ app.controller('listManagerController',['$scope','serverList',function($scope,se
 	$scope.list = {"todo": []};
 	$scope.task;
 	$scope.newFileName;
+	
+	var checkListItemAlreadyExist = function(array,element){
+		if(array.indexOf(element) == -1){
+			return false;
+		}
+			return true;
+	};
 	$scope.addToList = function(){
-		$scope.list.todo.push($scope.task);
-		$scope.task = '';
+		if(!checkListItemAlreadyExist($scope.list.todo,$scope.task)){
+			$scope.list.todo.push($scope.task);
+			$scope.task = '';
+		}else{
+			alert("Item already exist");
+		}
+	};
+	$scope.removeFromList = function(listItem){
+		$scope.list.todo.splice($scope.list.todo.indexOf(listItem), 1);
 	};
 	$scope.openImageApp = function(){		    
 		window.location.href="/GitRepo/Angular/todo/#/imageapp";

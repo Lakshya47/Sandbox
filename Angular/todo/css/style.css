@@ -47,6 +47,13 @@ body{
 .listItem li{
 	margin: 5px 0;
 }
+.listItem li span{
+	margin-left: 100px;
+}
+.listItem li span a{
+	color: #000;
+	font: 14px/100% helvetica;
+}
 .list{
 	list-style-type: none;
 }

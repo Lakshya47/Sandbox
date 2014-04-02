@@ -26,10 +26,8 @@
 			</div>
 			
 				
-			<ul class="listItem"><li ng-repeat="task in list.todo">{{task}}</li></ul>
+			<ul class="listItem"><li ng-repeat="task in list.todo">{{task}}<span><a href ng-click="removeFromList(task)">Delete</a></span></li></ul>
 		</div>
 		<div><input type="button" value="left" ng-click="leftPage()"></div>
 	</div>
-	
-	
 </div>

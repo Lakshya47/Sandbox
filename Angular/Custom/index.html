@@ -1,5 +1,10 @@
+<!DOCTYPE html>
 <html>
 <head>
+	
+	<link rel="stylesheet" href="resources/css/reset.css" type="text/css">
+	<link rel="stylesheet" href="resources/css/style.css" type="text/css">
+
 	<script type="text/javascript" src="resources/js/lib/angular/angular.js"></script>
 	<script type="text/javascript" src="resources/js/lib/angular/angular-route.js"></script>
 	<script type="text/javascript" src="resources/js/app/app.js"></script>
@@ -7,10 +12,11 @@
 	
 	<script type="text/javascript" src="resources/js/app/services/datastore.js"></script>
 	
-	<script type="text/javascript" src="resources/js/app/controllers/homecontroller.js"></script>
+	<script type="text/javascript" src="resources/js/app/controllers/bookslistingcontroller.js"></script>
+	<script type="text/javascript" src="resources/js/app/controllers/bookdetailcontroller.js"></script>
 	
 </head>
-<body ng-app="customApp">
+<body ng-app="libraryApp">
 	<div ng-view=""></div>
 </body>
 </html>

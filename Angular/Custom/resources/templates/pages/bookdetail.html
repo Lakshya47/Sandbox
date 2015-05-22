@@ -1,0 +1,39 @@
+<div ng-controller="BookDetailController">
+	
+	<div>
+		<table>
+			<tr>
+				<td>Book ID</td><td>{{bookDetail.globalbookid}}</td>
+			</tr>
+			<tr>
+				<td>Title</td><td>{{bookDetail.title}}</td>
+			</tr>
+			<tr>
+				<td>Authors</td>
+				<td>
+					<div ng-repeat="author in bookDetail.authors">
+						{{author.firstname}} {{author.lastname}}
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Ebookisbn10</td><td>{{bookDetail.ebookisbn10}}</td>
+			</tr>
+			<tr>
+				<td>Ebookisbn13</td><td>{{bookDetail.ebookisbn13}}</td>
+			</tr>
+			<tr>
+				<td>Editiontype</td><td>{{bookDetail.editiontype}}</td>
+			</tr>
+			<tr>
+				<td>Previewlink</td><td>{{bookDetail.previewlink}}</td>
+			</tr>
+			<tr>
+				<td>Printisbn10</td><td>{{bookDetail.printisbn10}}</td>
+			</tr>
+			<tr>
+				<td>Printisbn13</td><td>{{bookDetail.printisbn13}}</td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+/*
+ * Author: Lakshya Chaudhary 
+ */
+
+
+body{border-collapse: collapse; font-family: helvetica;}
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;}
+
+tr{border: 1px solid #000;}
+th{border: 1px solid #000;}
+td{border: 1px solid #000;}
+
+.clickable{cursor: pointer; color: blue;}
+.search{padding: 13px;}
+.search *{float: left; margin-right: 34px;}
+.search input{width:300px;}

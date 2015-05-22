@@ -1,0 +1,42 @@
+<div ng-controller="BooksListingController">
+	
+	<div class="search clearfix">
+		<label>Search By Book Name</label>
+		<input type="text" ng-model="searchText">
+	</div>
+	
+	<div>
+		<table>
+		  <tr class="clickable">
+			<th ng-click="sortColumn = 'globalbookid'; reverse = !reverse">Book ID</th>
+			<th ng-click="sortColumn = 'title'; reverse = !reverse">Title</th>
+			<th ng-click="sortColumn = 'ebookisbn10'; reverse = !reverse">Ebookisbn10</th>
+			<th ng-click="sortColumn = 'ebookisbn13'; reverse = !reverse">Ebookisbn13</th>
+			<th ng-click="sortColumn = 'printisbn10'; reverse = !reverse">Printisbn10</th>
+			<th ng-click="sortColumn = 'printisbn13'; reverse = !reverse">Printisbn13</th>
+			<th ng-click="sortColumn = 'editiontype'; reverse = !reverse">Editiontype</th>
+			<th ng-click="sortColumn = 'librarysupported'; reverse = !reverse">Librarysupported</th>
+			<th ng-click="sortColumn = 'previewlink'; reverse = !reverse">Previewlink</th>
+			<th>Author</th>
+		  </tr>
+		  
+		  <tr ng-repeat="book in bookListData.books | filter: searchText | orderBy : sortColumn : reverse">
+			<td>{{book.globalbookid}}</td>
+			<td class="clickable"><a ng-href="#/book-detail/{{book.globalbookid}}">{{book.title}}</a></td>
+			<td>{{book.ebookisbn10}}</td>
+			<td>{{book.ebookisbn13}}</td>
+			<td>{{book.printisbn10}}</td>
+			<td>{{book.printisbn13}}</td>
+			<td>{{book.editiontype}}</td>
+			<td>{{book.librarysupported}}</td>
+			<td class="clickable"><a ng-href="{{book.previewlink}}">{{book.previewlink}}</a></td>
+			<td>
+				<div ng-repeat="author in book.authors">
+					{{author.firstname}} {{author.lastname}}
+				</div>
+			</td>
+		  </tr>
+		</table>
+	
+	</div>
+</div>

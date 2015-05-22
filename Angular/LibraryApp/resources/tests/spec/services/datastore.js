@@ -1,9 +1,14 @@
 describe('dataStore Service tests', function (){
 	
   var dataStoreService;
+  
   beforeEach(function (){
+	  
+	  //loading libraryApp module
 	  module('libraryApp');
 	  inject(function(dataStore) {
+		  
+		  // Getting instance dataStore service
 		  dataStoreService = dataStore;
 	  });
   });

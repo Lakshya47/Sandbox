@@ -22,10 +22,9 @@ app.controller('BooksListingController',['$scope','dataStore',function($scope,da
 	 */
 	$scope.$on('booklistupdated',function(){
 		$scope.bookListData = dataStore.getList();
-		console.log($scope.bookListData);
 	});
 	
 	//Initiating fetching of BookList data
 	dataStore.fetchBookList();
-	console.log($scope.bookListData);
+	
 }]);

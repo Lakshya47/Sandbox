@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Simple expense manager project - CodePen</title>
+
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="js/lib/angular/angular.js"></script>
+	<script type="text/javascript" src="js/app/app.js"></script>
+	
+	<script type="text/javascript" src="js/app/controllers/expensemanagercontroller.js"></script>
+    
+</head>
+
+<body ng-app="expenseManagerApp">
+<div ng-controller="ExpenseManagerController">
+<h1>Simple expense manager project</h1>
+
+<div id="form-box">
+
+<!-- Toggling between ADD and EDIT header using $scope.mode model -->
+<h2 ng-show="mode == 'add'">Add a new item:</h2>
+<h2 ng-show="mode == 'edit'">Edit expense:</h2>
+<div class="add-btn">
+    <span class="add-text">Add a friend</span>
+    <div>
+        <div>
+        	<!-- A form element on submission of which a new friend will be added to $scope.initData.friends model -->
+        	<form name="addFriendForm" ng-submit="addFriend();">
+        		<input name="friendName" ng-model="newFriend" required type="text" placeholder="Eg: Vandy"/>
+        	</form>
+        </div>
+    </div>
+</div>
+
+<!-- expenseForm starts here -->
+<!-- 
+	expenseForm takes different values,
+	All values are stored in $scope.expenseFormData temporarily until the form is submitted.
+	As the form is submitted, $scope.expenseFormData's keys are set to void and form is set to default state.
+ -->
+<form name="expenseForm" ng-submit="submitForm();" novalidate>
+  <div>
+    <span>Type:</span>
+    
+    <!-- Using ng-repeat to populate the possible payment type using $scope.initData.paymentTypes model --> 
+      <select name="paymentType" ng-model="expenseFormData.paymentTypes" required>
+          <option ng-repeat="type in initData.paymentTypes" value="{{type}}">{{type}}</option>
+      </select>
+      <div ng-show="expenseForm.paymentType.$error.required" class="error-msg">Please select a PaymentType</div>
+  </div>
+  <div>
+    <span>Add friend:</span>
+    
+    <!-- Using ng-repeat to populate the friends list using $scope.initData.friends model --> 
+      <select name="friend" ng-model="expenseFormData.friends" multiple required>
+          <option ng-repeat="friend in initData.friends" value="{{friend}}">{{friend}}</option>
+      </select>
+    <div ng-show="expenseForm.friend.$error.required" class="error-msg">Please select a Friend</div>
+  </div>
+
+  <div>
+    <span>Name:</span> <input ng-model="expenseFormData.expenseName" required type="text" name="expenseName" placeholder="What did you spend on?">
+    <div ng-show="expenseForm.expenseName.$error.required" class="error-msg">Enter a expense</div>
+  </div>
+
+  <div>
+    <span>Date:</span> <input type="date" name="date" ng-model="expenseFormData.date" required>
+    <div ng-show="expenseForm.date.$error.required" class="error-msg">Please select a Date</div>
+    <div ng-show="!expenseForm.date.$error.required && expenseForm.date.$invalid" class="error-msg">Please enter a valid Date in YYYY-MM-DD format</div>
+  </div>
+
+  <div>
+    <span>Currency:</span> 
+    
+    <!-- Using ng-repeat to populate the currency list using $scope.initData.currencies model -->
+      <select name="currency" ng-model="currencyFactor" required ng-change="expenseFormData.expenseAmount = expenseAmount * currencyFactor">
+      	<option ng-repeat="currency in initData.currencies" required value="{{currency.value}}">{{currency.name}}</option>
+      </select>
+      <div ng-show="expenseForm.currency.$error.required" class="error-msg">Please select a Currency</div>
+  </div>
+  <div>
+    <span>Amount:</span> <input ng-model="expenseAmount" required min="0" ng-pattern="/^\d*\.?\d*$/" ng-change="expenseFormData.expenseAmount = expenseAmount * currencyFactor" name="amount" placeholder="How much?">
+    <div ng-show="expenseForm.amount.$error.required" class="error-msg">Amount cannot be empty</div>
+    <div ng-show="!expenseForm.amount.$error.required && expenseForm.amount.$invalid" class="error-msg">Enter a valid Amount</div>
+  </div>
+  
+  <input ng-show="mode == 'add'" id="button" type="submit" value="Add a new expense"/>
+  <input ng-show="mode == 'edit'" id="button" type="submit" value="DONE"/>
+
+</form>
+
+<!-- expenseForm ends here -->
+
+</div>
+<div class="filter-block">
+    <div class="filter-option">
+      <span>Filter by friend:</span>
+      <select name="filter-friend" ng-model="selectedFriend" ng-options="friend as friend for friend in initData.friends"></select>
+    </div>
+    <div class="filter-option">
+      <span>Currency:</span>
+      <select name="filter-currency" ng-model="selectedCurrency" ng-init="selectedCurrency = initData.currencies[0].value" ng-options="currency.value as currency.name for currency in initData.currencies"></select>
+    </div>
+</div>
+<table>
+  <tr>
+    <th id="type" class="center">type</th>
+    <th>name</th>
+    <th>Friends</th>
+    <th id="date">date</th>
+    <th style="text-align: right" id="amount">amount</th>
+    <th class="table-btn">edit</th>
+    <th class="table-btn">delete</th>
+  </tr>
+  <tr id="if-empty" ng-show="expenseList.length == 0">
+    <td colspan="4"><span>Your added items will show up here!</span></td>
+  </tr>
+  <tr ng-repeat="expense in expenseList | filter : selectedFriend : true | orderBy: 'date' : true" ng-show="expenseList.length != 0">
+    <td id="type" class="center">{{expense.paymentTypes}}</td>
+    <td>{{expense.expenseName}}</td>
+    <td>{{expense.friends}}</td>
+    <td id="date">{{expense.date}}</td>
+    <td style="text-align: right" id="amount">{{expense.expenseAmount/selectedCurrency}}</td>
+    
+    <!-- Toggling between ADD and EDIT functionality using $scope.mode model -->
+    <td class="table-btn" ng-show="mode == 'add'" ng-click="editExpense(expense.$$hashKey);">edit</td>
+    <td class="table-btn" ng-show="mode == 'add'" ng-click="deleteExpense(expense.$$hashKey);">delete</td>
+  </tr>
+
+</table>
+</div>
+</body>
+</html>

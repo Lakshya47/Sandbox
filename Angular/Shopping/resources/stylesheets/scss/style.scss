@@ -54,22 +54,62 @@ body{
 	}
 }
 
+.page-left.open{
+	width:250px;
+	
+	.overlay{
+		display:none;
+	}
+}
 .page-left{
 	display:none;
 	width:49px;
 	height: 500px;
 	background-color:$lightBlack;
+	position:fixed;
+	transition: width 1s;
+	overflow:hidden;
 	@media only screen and (max-width: $mediumBreakpoint) {
 		display:block;
-		float:left;
 	}
-	.menu{
-		display: block;
-		width:100%;
-		height:43px;
-		background-image: $spriteImagePath;
-		background-position: 10px -28px;
+	.menu-button{
+	
 		background-color: $pink;
+		a{
+			display: block;
+			width:49px;
+			height:43px;
+			background-image: $spriteImagePath;
+			background-position: 10px -28px;
+		}
+	}
+	
+	.overlay{
+		height: 100px;
+		position: absolute;
+		z-index: 100;
+		top:43px;
+		width:100%;
+	}
+	ul{
+		position:absolute;
+		right:0;
+		width:240px;
+		z-index: 50;
+		top:43px;
+		li{
+			padding: 15px 49px 10px 28px;
+			background-image: $spriteImagePath;
+			background-repeat: no-repeat;
+			background-position: 4px 18px;
+			
+			a{
+				color: $white;
+			}
+		}
+		li:hover{
+			background-color: $black;
+		}
 	}
 }
 
@@ -78,7 +118,7 @@ body{
 	float:none;
 	@media only screen and (max-width: $mediumBreakpoint) {
 		width:719px;
-		float:right;
+		padding-left:49px;
 	}
 }
 
@@ -112,31 +152,12 @@ header {
 		@media only screen and (max-width: $mediumBreakpoint) {
 			display: none;
 		}
-		a {
-			display: inline-block;
-			padding: 8px;
-			font-family: $primaryFontFamilyBold;
-			color: $pink;
-			font-size: 13px;
-		}
 	}
 	
 	.search{
 		margin-top: 20px;
-		font-size: 13px;
 		@media only screen and (max-width: $mediumBreakpoint) {
 			display: none;
-		}
-		.search-text{
-			border: 1px solid $lightGrey;
-			padding: 5px 10px;
-			width: 240px;
-		}
-		.search-submit{
-			border: 1px solid $lightGrey;
-			padding: 7px 7px 6px 7px;
-			font-family: $primaryFontFamilyBold;
-			border-left:0;
 		}
 	}
 	
@@ -146,6 +167,31 @@ header {
 			display: block;
 			margin: 20px 25px 0 0;
 		}
+	}
+}
+
+.search{
+	font-size: 13px;
+	.search-text{
+		border: 1px solid $lightGrey;
+		padding: 5px 10px;
+		width: 240px;
+	}
+	.search-submit{
+		border: 1px solid $lightGrey;
+		padding: 7px 7px 6px 7px;
+		font-family: $primaryFontFamilyBold;
+		border-left:0;
+	}
+}
+
+.controls{
+	a {
+		display: inline-block;
+		padding: 8px;
+		font-family: $primaryFontFamilyBold;
+		color: $pink;
+		font-size: 13px;
 	}
 }
 
@@ -213,17 +259,8 @@ header {
 		}
 		
 		.region{
-			
 			margin-top:5px;
-			select{
-				border: 1px solid $lightGrey;
-				padding: 4px 10px;
-				width: 295px;
-				color: $lightBlack;
-			}
-			
 			span{
-				font-size:13px;
 				margin: 10px 10px 0 0;
 			}
 		}
@@ -231,21 +268,48 @@ header {
 	}
 }
 
-.content-items{
-	border-top: 1px solid $lightGrey;
-	
+.region{
+	select{
+		border: 1px solid $lightGrey;
+		padding: 4px 10px;
+		width: 295px;
+		color: $lightBlack;
+	}
+	span{
+		font-size:13px;
+	}
 }
 
+.content-items{
+	border-top: 1px solid $lightGrey;
+	@media only screen and (max-width: $mediumBreakpoint) {
+		border:0;
+	}
+}
+#side-pad{
+	height: 238px;
+	@media only screen and (max-width: $mediumBreakpoint) {
+		display:none;
+	}
+}
 .row{
 	width:100%;
 }
 .column{
 	width:238px;
 	float:left;
-	border-left: 1px solid $lightGrey;
+}
+.column.first{
+	@media only screen and (max-width: $mediumBreakpoint) {
+		display:none;
+	}
 }
 .column.last{
 	border-right: 1px solid $lightGrey;
+}
+.box{
+	border-left:1px solid $lightGrey;
+	border-bottom:1px solid $lightGrey;
 }
 .product{
 	background-color: $white;
@@ -294,6 +358,7 @@ header {
 	text-align:center;
 	img{
 		width:100%;
+		display:block;
 	}
 }
 

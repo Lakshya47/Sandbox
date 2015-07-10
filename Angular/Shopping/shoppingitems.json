@@ -1,0 +1,112 @@
+{
+    "items": [
+        {
+        	"type" : "A",
+        	"data" : {
+        		"id" : "1",
+        		"title" : "Product Name Lorem Lipsum",
+        		"imagePath" : "resources/assets/images/product3.jpg",
+        		"info" : "Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla.",
+        		"price" : "$219",
+        		"hightlightPrice" : false
+        	} 
+        },
+        {
+        	"type" : "B",
+        	"data" : {
+        		"id" : "2",
+        		"imagePath" : "resources/assets/images/thumbnail5.jpg"
+        	} 
+        },
+        {
+        	"type" : "A",
+        	"data" : {
+        		"id" : "1",
+        		"title" : "Product Name Lorem Lipsum",
+        		"imagePath" : "resources/assets/images/product3.jpg",
+        		"info" : "Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla.",
+        		"price" : "$219",
+        		"hightlightPrice" : false
+        	} 
+        },
+        {
+        	"type" : "B",
+        	"data" : {
+        		"id" : "2",
+        		"imagePath" : "resources/assets/images/thumbnail5.jpg"
+        	} 
+        },
+        {
+        	"type" : "A",
+        	"data" : {
+        		"id" : "1",
+        		"title" : "Product Name Lorem Lipsum",
+        		"imagePath" : "resources/assets/images/product3.jpg",
+        		"info" : "Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla.",
+        		"price" : "$219",
+        		"hightlightPrice" : false
+        	} 
+        },
+        {
+        	"type" : "B",
+        	"data" : {
+        		"id" : "2",
+        		"imagePath" : "resources/assets/images/thumbnail5.jpg"
+        	} 
+        },
+        {
+        	"type" : "A",
+        	"data" : {
+        		"id" : "1",
+        		"title" : "Product Name Lorem Lipsum",
+        		"imagePath" : "resources/assets/images/product3.jpg",
+        		"info" : "Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla.",
+        		"price" : "$219",
+        		"hightlightPrice" : false
+        	} 
+        },
+        {
+        	"type" : "B",
+        	"data" : {
+        		"id" : "2",
+        		"imagePath" : "resources/assets/images/thumbnail5.jpg"
+        	} 
+        },
+        {
+        	"type" : "A",
+        	"data" : {
+        		"id" : "1",
+        		"title" : "Product Name Lorem Lipsum",
+        		"imagePath" : "resources/assets/images/product3.jpg",
+        		"info" : "Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla.",
+        		"price" : "$219",
+        		"hightlightPrice" : false
+        	} 
+        },
+        {
+        	"type" : "B",
+        	"data" : {
+        		"id" : "2",
+        		"imagePath" : "resources/assets/images/thumbnail5.jpg"
+        	} 
+        },
+        {
+        	"type" : "A",
+        	"data" : {
+        		"id" : "1",
+        		"title" : "Product Name Lorem Lipsum",
+        		"imagePath" : "resources/assets/images/product3.jpg",
+        		"info" : "Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla.",
+        		"price" : "$219",
+        		"hightlightPrice" : false
+        	} 
+        },
+        {
+        	"type" : "B",
+        	"data" : {
+        		"id" : "2",
+        		"imagePath" : "resources/assets/images/thumbnail5.jpg"
+        	} 
+        }
+    ]
+}

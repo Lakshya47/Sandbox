@@ -6,10 +6,20 @@
 <link href="resources/stylesheets/css/style.css" rel="stylesheet">
 
 </head>
-<body>
+<body ng-app="shoppingApp" ng-controller="HomePageTypeAController">
 <div class="page clearfix">
 	<section class="page-left">
-		<a href="#" class="menu"></a>
+		<div class="menu-button">
+			<a href="#"></a>
+		</div>
+		<div class="overlay">
+			
+		</div>
+		<ul>
+			<li><a href="#">Type A Format</a></li>
+			<li><a href="#">Type B Format</a></li>
+		</ul>
+		
 	</section>
 	<section class="page-right">
 		<header class="clearfix">
@@ -67,14 +77,14 @@
 			</div>
 			<div class="content-items">
 				<div class="row clearfix">
-					<div class="column">1</div>
-					<div class="column">
-						<div class="product">
+					<div class="column first">
+						<div id="side-pad"></div>
+						<div class="product box">
 							<div class="title">
 								<p>Product Name Lorem Lipsum</p>
 							</div>
 							<div class="image">
-								<img alt="Product Image" src="resources/assets/images/product1.jpg">
+								<img alt="Product Image" src="resources/assets/images/product3.jpg">
 							</div>
 							<div class="desc">
 								<p>Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla</p>
@@ -88,15 +98,58 @@
 								</div>
 							</div>
 						</div>
-						<div class="thumbnail">
-							<img alt="Product thumbnail" src="resources/assets/images/thumbnail1.jpg">
+						<div class="thumbnail box">
+							<img alt="Product thumbnail" src="resources/assets/images/thumbnail5.jpg">
 						</div>
 					</div>
 					<div class="column">
-						<div class="thumbnail">
+						<div class="product box">
+							<div class="title">
+								<p>Product Name Lorem Lipsum</p>
+							</div>
+							<div class="image">
+								<img alt="Product Image" src="resources/assets/images/product2.jpg">
+							</div>
+							<div class="desc">
+								<p>Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla</p>
+							</div>
+							<div class="price clearfix">
+								<div class="rate floatleft">
+									<span>$219.00</span>
+								</div>
+								<div class="buy floatright">
+									<a href="#">BUY</a>
+								</div>
+							</div>
+						</div>
+						<div class="thumbnail box">
+							<img alt="Product thumbnail" src="resources/assets/images/thumbnail3.jpg">
+						</div>
+						<div class="product box">
+							<div class="title">
+								<p>Product Name Lorem Lipsum</p>
+							</div>
+							<div class="image">
+								<img alt="Product Image" src="resources/assets/images/product6.jpg">
+							</div>
+							<div class="desc">
+								<p>Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla</p>
+							</div>
+							<div class="price clearfix">
+								<div class="rate floatleft">
+									<span>$219.00</span>
+								</div>
+								<div class="buy floatright">
+									<a href="#">BUY</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="thumbnail box">
 							<img alt="Product thumbnail" src="resources/assets/images/thumbnail1.jpg">
 						</div>
-						<div class="product">
+						<div class="product box">
 							<div class="title">
 								<p>Product Name Lorem Lipsum</p>
 							</div>
@@ -114,15 +167,18 @@
 									<a href="#">BUY</a>
 								</div>
 							</div>
+						</div>
+						<div class="thumbnail box">
+							<img alt="Product thumbnail" src="resources/assets/images/thumbnail4.jpg">
 						</div>
 					</div>
 					<div class="column last">
-					<div class="product">
+					<div class="product box">
 							<div class="title">
 								<p>Product Name Lorem Lipsum</p>
 							</div>
 							<div class="image">
-								<img alt="Product Image" src="resources/assets/images/product1.jpg">
+								<img alt="Product Image" src="resources/assets/images/product4.jpg">
 							</div>
 							<div class="desc">
 								<p>Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla</p>
@@ -136,8 +192,27 @@
 								</div>
 							</div>
 						</div>
-						<div class="thumbnail">
-							<img alt="Product thumbnail" src="resources/assets/images/thumbnail1.jpg">
+						<div class="thumbnail box">
+							<img alt="Product thumbnail" src="resources/assets/images/thumbnail2.jpg">
+						</div>
+						<div class="product box">
+							<div class="title">
+								<p>Product Name Lorem Lipsum</p>
+							</div>
+							<div class="image">
+								<img alt="Product Image" src="resources/assets/images/product5.jpg">
+							</div>
+							<div class="desc">
+								<p>Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla</p>
+							</div>
+							<div class="price clearfix">
+								<div class="rate floatleft">
+									<span>$219.00</span>
+								</div>
+								<div class="buy floatright">
+									<a href="#">BUY</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -167,5 +242,10 @@
 	</section>
 </div>
 <div style="height: 50px;"></div>
+
+<script type="text/javascript" src="resources/js/lib/angular/angular.js"></script>
+<script type="text/javascript" src="resources/js/app/app.js"></script>
+<script type="text/javascript" src="resources/js/app/services/datastore.js"></script>
+<script type="text/javascript" src="resources/js/app/controllers/homepagetypeA.js"></script>
 </body>
 </html>

@@ -1,0 +1,217 @@
+/*
+  Author: Lakshya Chaudhary
+*/
+  
+@font-face {
+	font-family: AdobeClean-Regular;
+	src: url('../../assets/fonts/AdobeClean-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family: AdobeClean-Bold;
+	src: url('../../assets/fonts/AdobeClean-Bold.otf') format('opentype');
+}
+
+/* Global Css setting goes here */
+
+$primaryFontFamily: AdobeClean-Regular , Arial;
+$primaryFontFamilyBold: AdobeClean-Bold , Arial;
+
+$white: #ffffff;
+$black: #000000;
+$lightBlack: #333333;
+$pink: #ee4d84;
+$pink2: #d14b9b;
+$grey: #999999;
+$lightGrey: #cccccc;
+$verylightGrey: #e5e5e5;
+
+$backgroundImagePath: url('../../assets/images/background.png');
+$spriteImagePath: url('../../assets/images/sprite.png');
+
+$pageWidthDesktop: 998px;
+$pageWidthIpad: 768px;
+
+
+$mediumBreakpoint: 998px;
+
+
+
+body{
+font-family: $primaryFontFamily;
+color: $lightBlack;
+background-image: $backgroundImagePath;
+background-repeat: repeat;
+}
+
+.floatleft{float:left;}
+.floatright{float:right;}
+.clearfix:after{content: " "; display: table; clear: both;}
+
+.page{
+border: 1px solid #000;
+width: $pageWidthDesktop;
+margin: 0 auto;
+}
+
+#logo, #footer-logo{
+	a{
+		display: block;
+		padding: 0 25px; 
+	}
+}
+
+header {
+	
+	padding: 26px 20px;
+	.info{
+		font-size: 11px;
+		width: 250px;
+		margin: 20px 0 0 30px;
+	}
+	
+	.controls{
+		margin-top: 20px;
+		margin-right: 10px;
+		a {
+			display: inline-block;
+			padding: 8px;
+			font-family: $primaryFontFamilyBold;
+			color: $pink;
+			font-size: 13px;
+		}
+		
+	}
+	
+	.search{
+		margin-top: 20px;
+		font-size: 13px;
+		
+		.search-text{
+			border: 1px solid $lightGrey;
+			padding: 5px 10px;
+			width: 240px;
+		}
+		.search-submit{
+			border: 1px solid $lightGrey;
+			padding: 7px 7px 6px 7px;
+			font-family: $primaryFontFamilyBold;
+			border-left:0;
+		}
+	}
+
+}
+
+.content{
+	
+	border: 1px solid $lightGrey;
+	padding: 17px 19px;
+	background-color: $verylightGrey;
+	
+	
+	.content-header{
+		aside{
+			position:relative;
+			text-transform: uppercase;
+			
+			.menu{
+				width: 184px;
+				background-color: $black;
+				color: $white;
+				padding: 15px 28px 10px 28px;
+				
+				p{
+					font-size:18px;
+					margin: 5px 0 0;
+				}			
+			}
+			
+			.menu-items{
+				width: 184px;
+				background-color: $lightBlack;
+				padding: 15px 28px 10px 28px;
+				position: absolute;
+				
+				ul{
+					li{
+						padding-left:15px;
+						background-image: $spriteImagePath;
+						background-repeat: no-repeat;
+						background-position: -4px 3px;
+						margin: 0 0 12px 0;
+						
+						a{
+							color: $white;
+						}
+					}
+				} 				
+			}
+		}
+		
+		.crumb{
+			font-size:14px;
+			color: $grey;
+			margin: 15px 0 0 30px;
+			
+			span{
+				font-size:19px;
+				color: $lightBlack;
+			}
+		}
+		
+		.region{
+			
+			margin-top:5px;
+			select{
+				border: 1px solid $lightGrey;
+				padding: 4px 10px;
+				width: 295px;
+				color: $lightBlack;
+			}
+			
+			span{
+				font-size:13px;
+				margin: 10px 10px 0 0;
+			}
+		}
+		
+	}
+	
+	.content-items{
+	
+	}
+}
+
+footer{
+	padding: 20px 20px;
+	
+	.desc{
+		font-size: 12px;
+		margin-top: 10px;
+		
+		a{
+			color: $pink2;
+			margin: 0 0 0 10px;
+			display: inline-block;
+		}
+	}
+}
+
+.social{
+	margin: 10px 20px 0 0;
+	a{display:inline-block;}
+}
+
+
+
+
+/* Breakpoints css goes here */
+/* if device width is smaller than 1000px then... */
+
+@media only screen and (max-width: $mediumBreakpoint) {
+
+.page{
+width: $pageWidthIpad;
+}
+
+}
+

@@ -8,12 +8,14 @@
 
 </head>
 <body ng-app="shoppingApp" ng-controller="HomePageController">
-<div class="page clearfix type-A">
+<div class="page type-B clearfix">
 	<section id="sidebar" class="page-left" set-height>
 		<div class="menu-button">
 			<a href="#" ng-click="openSidebar();"></a>
 		</div>
-		<div class="overlay"></div>
+		<div class="overlay">
+			
+		</div>
 		<ul>
 			<li><a href="#">Type A Format</a></li>
 			<li><a href="#">Type B Format</a></li>
@@ -78,28 +80,13 @@
 				<div class="row clearfix">
 					<div class="column first">
 						<div id="side-pad"></div>
-						<div ng-repeat="obj in columnModel[0] | filter:searchText"">
-							<div ng-if="obj.type == 'A'" ng-include="partialMap.product"></div>
-							<div ng-if="obj.type == 'B'" ng-include="partialMap.thumbnail"></div>
+						<div class="thumbnail box">
+							<img alt="Product thumbnail" src="resources/assets/images/thumbnail5.jpg">
 						</div>
 					</div>
-					<div class="column">
-						<div ng-repeat="obj in columnModel[1] | filter:searchText"">
-							<div ng-if="obj.type == 'A'" ng-include="partialMap.product"></div>
-							<div ng-if="obj.type == 'B'" ng-include="partialMap.thumbnail"></div>
-						</div>
-						
-					</div>
-					<div class="column">
-						<div ng-repeat="obj in columnModel[2] | filter:searchText"">
-							<div ng-if="obj.type == 'A'" ng-include="partialMap.product"></div>
-							<div ng-if="obj.type == 'B'" ng-include="partialMap.thumbnail"></div>
-						</div>
-					</div>
-					<div class="column last">
-						<div ng-repeat="obj in columnModel[3] | filter:searchText"">
-							<div ng-if="obj.type == 'A'" ng-include="partialMap.product"></div>
-							<div ng-if="obj.type == 'B'" ng-include="partialMap.thumbnail"></div>
+					<div class="coulmn-large">
+						<div ng-repeat="obj in shopItemList.items | filter:searchText">
+							<div ng-if="obj.type == 'A'" ng-include="partialMap.productLarge"></div>
 						</div>
 					</div>
 				</div>

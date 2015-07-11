@@ -1,0 +1,26 @@
+<!-- Shopping Item Type A template starts -->
+<!-- This Template shows general attributes of item like Photo, Title, brief info, purchase button, etc. -->
+
+
+<div class="product box">
+	<div class="title">
+		<p>{{obj.data.title}}</p>
+	</div>
+	<div class="image">
+		<img alt="Product Image" ng-src="{{obj.data.imagePath}}">
+	</div>
+	<div class="desc">
+		<p>{{obj.data.info}}</p>
+	</div>
+	<div class="price clearfix">
+		<div class="rate floatleft" ng-class="obj.data.hightlightPrice ? 'highlight' : ''">
+			<span>{{obj.data.price}}</span>
+		</div>
+		<div class="buy floatright">
+			<a href="#">BUY</a>
+		</div>
+	</div>
+</div>
+
+
+<!-- Shopping Item Type A template ends -->

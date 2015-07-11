@@ -30,6 +30,9 @@ app.factory('dataStore',['$http','$rootScope',function($http,$rootScope){
 			$rootScope.$broadcast('dataStoreUpdated');
 		}).error(function(data){
 			console.log('Data fetch Failure');
+			var text = 'Hi ! Chrome doesn\'t allow template files to be loaded from local, you need to put these HTMLs on Web Server for best result. These HTMLs will work fine in Firefox.'
+			alert(text);
+			console.log(text)
 		});
 	};
 	
@@ -38,7 +41,7 @@ app.factory('dataStore',['$http','$rootScope',function($http,$rootScope){
 	};
 	
 	return {
-		fetchBookList: fetchItems,
+	        fetchItems: fetchItems,
 		getList : getList
 	}
 }]);

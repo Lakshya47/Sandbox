@@ -89,13 +89,22 @@ body {
   display: block;
   padding: 0 25px; }
 
+h3 {
+  font-size: 11px;
+  color: #ffffff;
+  font-size: 18px;
+  text-transform: uppercase; }
+
+h4 {
+  font-size: 11px;
+  color: #333333; }
+
 header {
   padding: 26px 20px; }
   @media only screen and (max-width: 998px) {
     header {
       padding: 20px 0; } }
   header .info {
-    font-size: 11px;
     width: 250px;
     margin: 20px 0 0 30px; }
     @media only screen and (max-width: 998px) {
@@ -157,11 +166,8 @@ header {
     .content .content-header aside .menu {
       width: 182px;
       background-color: #000000;
-      color: #ffffff;
-      padding: 15px 28px 10px 28px;
-      text-transform: uppercase; }
-      .content .content-header aside .menu p {
-        font-size: 18px;
+      padding: 15px 28px 10px 28px; }
+      .content .content-header aside .menu h3 {
         margin: 5px 0 0; }
     .content .content-header aside .menu-items {
       width: 182px;

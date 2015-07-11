@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<meta charset="UTF-8">
 <title>Teehan+Lax - Defining Experience</title>
 <link href="resources/stylesheets/css/normalize.css" rel="stylesheet">
 <link href="resources/stylesheets/css/style.css" rel="stylesheet">
@@ -9,7 +9,7 @@
 </head>
 <body ng-app="shoppingApp" ng-controller="HomePageController">
 <div class="page type-B clearfix">
-	<section id="sidebar" class="page-left" set-height>
+	<div id="sidebar" class="page-left" set-height>
 		<div class="menu-button">
 			<a href="#" ng-click="openSidebar();"></a>
 		</div>
@@ -21,15 +21,17 @@
 			<li><a href="#">Type B Format</a></li>
 		</ul>
 		
-	</section>
+	</div>
 	<section class="page-right">
 		<header class="clearfix">
-			<div id="logo"class="floatleft">
+			<div id="logo" class="floatleft">
 				<a href="#">
 					<img alt="logo" src="resources/assets/images/logo.png">
 				</a>
 			</div>
-			<div class="info floatleft">Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla a accumsan.</div>
+			<div class="info floatleft">
+				<h4>Consectetur adipiscing elit. Quisque ac posuere lectus. Donec gravida aliquet nulla a accumsan.</h4>
+			</div>
 			<div class="search floatright clearfix">
 				<a href="#" class="search-submit floatright">OK</a>
 				<input type="text" placeholder="Search" class="search-text floatright" ng-model="searchText">
@@ -44,11 +46,11 @@
 				<a href="#" class="twitter"><img alt="TWITTER" src="resources/assets/images/twitter-button.png"></a>
 			</div>
 		</header>
-		<section class="content">
+		<div class="content">
 			<div class="content-header clearfix">
 				<aside class="floatleft">
 					<div class="menu">
-						<p>men fashion:</p>
+						<h3>men fashion:</h3>
 					</div>
 					<div class="menu-items">
 						<ul>
@@ -91,7 +93,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 		<footer>
 			<div class="clearfix">
 				<div id="footer-logo" class="floatleft">
@@ -100,7 +102,7 @@
 					</a>
 				</div>
 				<div class="desc floatleft clearfix">
-					<p class="rights floatleft">© 2014 WE.Fashion. All rights reserved. | </p>
+					<p class="rights floatleft">Â© 2014 WE.Fashion. All rights reserved. | </p>
 					<a class="links floatleft" href="#">About Us</a>
 					<a class="links floatleft" href="#">Privacy Policy</a>
 					<a class="links floatleft" href="#">Terms Of Use</a>
@@ -115,6 +117,8 @@
 		</footer>
 	</section>
 </div>
+
+<!-- Dummy div for increaing height -->
 <div style="height: 50px;"></div>
 
 <script type="text/javascript" src="resources/js/lib/angular/angular.js"></script>

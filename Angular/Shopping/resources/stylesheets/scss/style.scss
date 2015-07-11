@@ -128,6 +128,17 @@ body{
 	}
 }
 
+h3 {
+	font-size: 11px;
+	color: $white;
+	font-size:18px;
+	text-transform: uppercase;
+}
+h4 {
+	font-size: 11px;
+	color: $lightBlack;
+}
+
 header {
 	
 	padding: 26px 20px;
@@ -136,7 +147,7 @@ header {
 	}
 	
 	.info{
-		font-size: 11px;
+		
 		width: 250px;
 		margin: 20px 0 0 30px;
 		@media only screen and (max-width: $mediumBreakpoint) {
@@ -216,12 +227,9 @@ header {
 			.menu{
 				width: 182px;
 				background-color: $black;
-				color: $white;
 				padding: 15px 28px 10px 28px;
-				text-transform: uppercase;
 				
-				p{
-					font-size:18px;
+				h3{
 					margin: 5px 0 0;
 				}			
 			}

@@ -1,0 +1,12 @@
+{
+  "name": "libraryApp",
+  "version": "0.1.01",
+  "description": "The Metaverse virtual reality. The final outcome of all virtual worlds, augmented reality, and the Internet.",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-screenshot": "^0.6.0"
+  }
+}
